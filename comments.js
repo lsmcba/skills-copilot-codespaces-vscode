@@ -1,24 +1,90 @@
-
+//create web server
 const express = require('express');
 const app = express();
-const path = require('path');
-const bodyParser = require('body-parser');
-
 const port = 3000;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+//create a route
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
-//serve static files
-app.use(express.static(path.join(__dirname, '../client/dist')));
-
-//import the routes
-const routes = require('./routes.js');
-
-//use the routes
-app.use('/', routes);
-
-//start server
+//listen on port 3000
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+
+// Path: comments.js
+//create web server
+const express = require('express');
+const app = express();
+const port = 3000;
+
+//create a route
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+//listen on port 3000
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+// Path: comments.js
+//create web server
+const express = require('express');
+const app = express();
+const port = 3000;
+
+//create a route
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+//listen on port 3000
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+// Path: comments.js
+//create web server
+const express = require('express');
+const app = express();
+const port = 3000;
+
+//create a route
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+//listen on port 3000
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+// Path: comments.js
+//create web server
+const express = require('express');
+const app = express();
+const port = 3000;
+
+//create a route
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+//listen on port 3000
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
+// Path: comments.js
+//create web server
+const express = require('express');
+const app = express();
+const port = 3000;
+
+//create a route
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+//listen on port 3000
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
 });
