@@ -1,15 +1,15 @@
 //create web server
-var express = require('express');
+import express from 'express';
 var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost/comments');
-var Comment = require('./model/comment');
-var cors = require('cors');
+import { json, urlencoded } from 'body-parser';
+import { connect } from 'mongoose';
+var db = connect('mongodb://localhost/comments');
+import Comment, { find } from './model/comment';
+import cors from 'cors';
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(json());
+app.use(urlencoded({extended: false}));
 
 app.post('/comment', function(req, res) {
     var comment = new Comment(req.body);
@@ -23,7 +23,7 @@ app.post('/comment', function(req, res) {
 });
 
 app.get('/comment', function(req, res) {
-    Comment.find({}, function(err, comments) {
+    find({}, function(err, comments) {
         if (err) {
             res.status(500).send({error: "Could not fetch comments."});
         } else {
